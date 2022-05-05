@@ -1,15 +1,24 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
  class Counter extends Component {
-    state = { count:12 } 
+    state = { count:0 } 
    
      handleInc = () => {
-        this.setState( { count:this.state.count+1 } )
+        var co=this.state.count
+        var c=  co>=10 ? co : co+1
+        this.setState( { count:c } )
      }
+
+     handleDec = () => {
+        var co=this.state.count
+        var c=  co<=0 ? co : co-1
+        this.setState( { count:c } )
+     }
+
 
     render() { 
         return (<div>
-                 <button    className='btn btn-danger m-2' >dec.</button>
+                 <button onClick={this.handleDec}   className='btn btn-danger m-2' >dec.</button>
                 <span  className= {this.getClass()}>{this.formatCount()}</span>
                 <button onClick={this.handleInc} className='btn btn-success m-2'>Inc.</button>
                 </div>);
