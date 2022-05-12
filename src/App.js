@@ -18,8 +18,10 @@ class App extends Component {
     console.log(this.state.counters)
     return (<div className='row'>
       {this.state.counters.map(c => <div  >
-        <Counter key={c.id} />
-        <div className='btn btn-primary m-2 '> {c.value}</div>
+
+        <Counter key={c.id} name={c.value} />
+
+        {/* <div className='btn btn-primary m-2 '> {c.value}</div> */}
       </div>)
       }
     </div>);

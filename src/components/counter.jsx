@@ -17,10 +17,14 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 
     render() { 
+        console.log(this.props)
+
         return (<div>
                  <button onClick={this.handleDec}   className='btn btn-danger m-2' >dec.</button>
                 <span  className= {this.getClass()}>{this.formatCount()}</span>
                 <button onClick={this.handleInc} className='btn btn-success m-2'>Inc.</button>
+                <span  className= {this.getClass()}>{this.props.name}</span>
+
                 </div>);
     }
 
