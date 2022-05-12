@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
  class Counter extends Component {
-    state = { count:0 } 
+    state = { count:this.props.count } 
    
      handleInc = () => {
         var co=this.state.count
