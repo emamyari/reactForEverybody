@@ -13,9 +13,12 @@ class App extends Component {
       { id: 6, value: "مک بوک",count:10 }
     ]
   }
-
+ 
   handleDelete = (counterId) => {
-     console.log(counterId)
+
+      const counters=this.state.counters.filter(c=>c.id != counterId )
+
+      console.log(counters)
  }
 
   render() {
