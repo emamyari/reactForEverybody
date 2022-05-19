@@ -6,19 +6,19 @@ import Counter from './components/counter';
 
 class App extends Component {
   state = {
-    counters: [
-      { id: 1, value: "آیفون",count:8 },
-      { id: 2, value: "گاغذ",count:100 },
-      { id: 3, value: "جارو",count:150 },
-      { id: 6, value: "مک بوک",count:10 }
-    ]
-  }
+            counters: [
+              { id: 1, value: "آیفون",count:8 },
+              { id: 2, value: "گاغذ",count:100 },
+              { id: 3, value: "جارو",count:150 },
+              { id: 6, value: "مک بوک",count:10 }
+            ]
+          }
  
   handleDelete = (counterId) => {
 
       const counters=this.state.counters.filter(c=>c.id != counterId )
 
-      console.log(counters)
+      this.setState({counters})
  }
 
   render() {
