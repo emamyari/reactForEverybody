@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Counter from './counter';
-
+import NavBar  from './navbar';
 class Counters extends Component {
     state = {
         counters: [
@@ -18,6 +18,8 @@ class Counters extends Component {
 
     render() {
         return (<div className='row'>
+                        <NavBar></NavBar>
+
             {
                 this.state.counters.map(c => <div  >
                     <Counter key={c.id} name={c.value} count={c.count} />
