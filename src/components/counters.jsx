@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Counter from './counter';
-import NavBar  from './navbar';
 class Counters extends Component {
     state = {
         counters: [
@@ -11,19 +10,36 @@ class Counters extends Component {
         ]
     }
 
-    handleDelete = (counterId) => {
-        const counters = this.state.counters.filter(c => c.id != counterId)
-        this.setState({ counters })
+    handleInc = () => {
+        var co=this.state.count
+        var c=  co>=10 ? co : co+1
+        this.setState( { count:c } )
+     }
+
+     handleDec = () => {
+        var co=this.state.count
+        var c=  co<=0 ? co : co-1
+        this.setState( { count:c } )
+     }
+   
+     handleDelete = () => {
+            console.log('handle delete is runing')
+        // const counters = this.state.counters.filter(c => c.id != counterId)
+        // this.setState({ counters })
     }
 
     render() {
         return (<div className='row'>
-                        <NavBar></NavBar>
 
             {
                 this.state.counters.map(c => <div  >
-                    <Counter key={c.id} name={c.value} count={c.count} />
-                    <button onClick={() => this.handleDelete(c.id)} className='btn btn-danger m-2'>Delete</button>
+                    <Counter 
+                            key={c.id} 
+                            name={c.value} 
+                            count={c.count} 
+                            onDelete={this.handleDelete}
+                            />
+                    
                 </div>)
             }
         </div>
