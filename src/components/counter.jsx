@@ -14,7 +14,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
                 
                 <span  className= {this.getClass()}>{this.props.name}</span>  
                 
-                <button onClick={() => this.handleDelete(c.id)} className='btn btn-danger m-2'>Delete</button>
+                <button onClick={this.props.onDelete} className='btn btn-danger m-2'>Delete</button>
                 
                 </div>);
     }
