@@ -12,8 +12,10 @@ class App extends Component {
 
   render() {
 
-    return (            <div>           <NavBar></NavBar>
-    <Counters /></div> );
+    return (<div>  
+      <NavBar></NavBar>
+      <Counters         />
+      </div> );
   }
 }
 

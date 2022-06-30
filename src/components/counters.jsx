@@ -41,13 +41,13 @@ class Counters extends Component {
         return (<div className='row'>
 
             {
-                this.state.counters.map(c => <div  >
+                this.state.counters.map(item => <div  >
                     <Counter 
-                            key={c.id}
-                            id={c.id} 
-                            name={c.value} 
-                            count={c.count} 
-                            counter={c}
+                            key={item.id}
+                            id={item.id} 
+                            name={item.value} 
+                            count={item.count} 
+                            counter={item}
                             onDelete={this.handleDelete}
                             onInc={this.handleInc}
                             onDec={this.handleDec}
