@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
    
     render() { 
          return (<div>
-                 <button onClick={()=>this.props.onDec(this.props.id)}   className='btn btn-danger m-2' >dec.</button>
+                 <button onClick={()=>this.props.onDec(this.props.counter)}   className='btn btn-danger m-2' >dec.</button>
                 <span  className= {this.getClass()}>{this.formatCount()}</span>
                 <button onClick={()=>this.props.onInc(this.props.counter)} className='btn btn-success m-2'>Inc.</button>
                 

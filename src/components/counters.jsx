@@ -11,7 +11,7 @@ class Counters extends Component {
     }
 
     handleInc = counter => {
-        // console.log(counterId)
+        console.log(counter)
         const counters=[...this.state.counters]
         const index=counters.indexOf(counter)
         counters[index]={...counter}
@@ -22,11 +22,13 @@ class Counters extends Component {
         // this.setState( { count:c } )
      }
 
-     handleDec = (counterId) => {
-         console.log("dec",counterId)
-        // var co=this.state.count
-        // var c=  co<=0 ? co : co-1
-        // this.setState( { count:c } )
+     handleDec = (counter) => {
+        console.log(counter)
+        const counters=[...this.state.counters]
+        const index=counters.indexOf(counter)
+        counters[index]={...counter}
+        counters[index].count--;
+        this.setState({counters})
     }
    
      handleDelete = (counterId) => {
