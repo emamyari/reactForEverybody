@@ -1,14 +1,21 @@
-
-
-
-
   import logo from './logo.svg';
-  import React, { Component } from 'react';
+  import  { Component } from 'react';
   import './App.css';
+  import * as React from 'react';
+
   import Counters from './components/counters';
   import NavBar from './components/navbar';
   import Highcharts from 'highcharts';
   import HighchartsReact from 'highcharts-react-official';
+
+const option={
+  series:[{
+    name:'nomre',
+    data:[10,15,20,16,50]
+  }]
+}
+
+
 
   class App extends Component {
     state = {
@@ -61,9 +68,9 @@
   
     render() {
   
-      return (<div>
+      return (<div className='App'>
   
-                  <table className="table table-striped">
+                  {/* <table className="table table-striped">
                     <thead>
                       <tr>
                         <th >id</th>
@@ -81,9 +88,14 @@
                       )}
                       
                     </tbody>
-                  </table>
+                  </table> */}
+ 
+                  <HighchartsReact highcharts={Highcharts} options={option}/>   
 
-                  <HighchartsReact Highcharts={Highcharts} opthion={{}}></HighchartsReact>
+                  {/* <HighchartsReact
+                highcharts={Highcharts}
+                options={options}
+            /> */}
         {/* <NavBar></NavBar>
         <Counters
           cntr={this.state.counters}
