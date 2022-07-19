@@ -7,8 +7,9 @@
   import './App.css';
   import Counters from './components/counters';
   import NavBar from './components/navbar';
-  
-  
+  import Highcharts from 'highcharts';
+  import HighchartsReact from 'highcharts-react-official';
+
   class App extends Component {
     state = {
       counters: [
@@ -62,25 +63,27 @@
   
       return (<div>
   
-  <table className="table table-striped">
-    <thead>
-      <tr>
-        <th >First</th>
-        <th >Last</th>
-      </tr>
-    </thead>
-    <tbody>
-      {this.state.counters.map(c=>
-      <tr>
-        <td>{c.name}</td>
-        <td>{c.family}</td>
-      </tr>
-       )}
-      
-    </tbody>
-  </table>
-  
-  
+                  <table className="table table-striped">
+                    <thead>
+                      <tr>
+                        <th >id</th>
+                        <th >name</th>
+                        <th >price</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {this.state.counters.map(c=>
+                      <tr>
+                        <td>{c.name}</td>
+                        <td>{c.family}</td>
+                        <td>{c.nc}</td>
+                      </tr>
+                      )}
+                      
+                    </tbody>
+                  </table>
+
+                  <HighchartsReact Highcharts={Highcharts} opthion={{}}></HighchartsReact>
         {/* <NavBar></NavBar>
         <Counters
           cntr={this.state.counters}
