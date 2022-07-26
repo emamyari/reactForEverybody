@@ -29,7 +29,7 @@
 
   class App extends Component {
     state = { 
-     
+     counters:[],
       series: [{ data: [] }]
     }
   
@@ -66,7 +66,7 @@
         .then(res => res.json())
         .then(
           (result) => {
-            this.setState({ series: [{ data: result }] })
+            this.setState({ series: [{ data: result.hc }],counters: result.cn })
              
           },
           (error) => {
@@ -79,7 +79,7 @@
   
       return (<div className='App'>
   
-                  {/* <table className="table table-striped">
+                 <table className="table table-striped">
                     <thead>
                       <tr>
                         <th >id</th>
@@ -97,7 +97,7 @@
                       )}
                       
                     </tbody>
-                  </table> */}
+                  </table> 
  
                   <HighchartsReact highcharts={Highcharts} options={this.state}/>   
 
