@@ -29,8 +29,10 @@
 
   class App extends Component {
     state = { 
-     counters:[],
-      series: [{ data: [] }]
+      counters:[],
+      series: [{ data: [] }],
+      dline:{series: [{ data: [] }]}
+
     }
   
     handleInc = counter => {
@@ -66,7 +68,13 @@
         .then(res => res.json())
         .then(
           (result) => {
-            this.setState({ series: [{ data: result.hc }],counters: result.cn })
+            this.setState({ 
+              
+              chart:{type:"pie"},
+              series: [{ data: result.hc }]
+              ,counters: result.cn
+              ,dline:{series:[{data: result.hc}]}
+            })
              
           },
           (error) => {
@@ -100,6 +108,7 @@
                   </table> 
  
                   <HighchartsReact highcharts={Highcharts} options={this.state}/>   
+                  <HighchartsReact highcharts={Highcharts} options={this.state.dline}/>   
 
                   {/* <HighchartsReact
                 highcharts={Highcharts}
