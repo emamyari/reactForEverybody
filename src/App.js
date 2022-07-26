@@ -8,30 +8,29 @@
   import Highcharts from 'highcharts';
   import HighchartsReact from 'highcharts-react-official';
 
-let option={
-  chart: {
-    type: 'pie'
-},
-  series:[{
-    name: 'Share',
-    data: [
-        { name: 'Chrome', y: 61.41 },
-        { name: 'Internet Explorer', y: 11.84 },
-        { name: 'Firefox', y: 10.85 },
-        { name: 'Edge', y: 4.67 },
-        { name: 'Safari', y: 4.18 },
-        { name: 'Other', y: 7.05 }
-    ]
-}]
-}
+// let option={
+//   chart: {
+//     type: 'pie'
+// },
+//   series:[{
+//     name: 'Share',
+//     data: [
+//         { name: 'Chrome', y: 61.41 },
+//         { name: 'Internet Explorer', y: 11.84 },
+//         { name: 'Firefox', y: 10.85 },
+//         { name: 'Edge', y: 4.67 },
+//         { name: 'Safari', y: 4.18 },
+//         { name: 'Other', y: 7.05 }
+//     ]
+// }]
+// }
 
 
 
   class App extends Component {
-    state = {
-      counters: [
-       
-      ]
+    state = { 
+     
+      series: [{ data: [] }]
     }
   
     handleInc = counter => {
@@ -63,11 +62,11 @@ let option={
   
     componentDidMount() {
   
-      fetch("http://192.168.1.116:8000/test/")
+      fetch("http://192.168.1.116:8000/test4/")
         .then(res => res.json())
         .then(
           (result) => {
-            this.setState({ counters: result })
+            this.setState({ series: [{ data: result }] })
              
           },
           (error) => {
@@ -100,7 +99,7 @@ let option={
                     </tbody>
                   </table> */}
  
-                  <HighchartsReact highcharts={Highcharts} options={option}/>   
+                  <HighchartsReact highcharts={Highcharts} options={this.state}/>   
 
                   {/* <HighchartsReact
                 highcharts={Highcharts}
