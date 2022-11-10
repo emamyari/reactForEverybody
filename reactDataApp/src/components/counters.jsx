@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+﻿import React, { Component } from 'react';
 import Counter from './counter';
 
 class Counters extends Component {
@@ -11,9 +11,20 @@ class Counters extends Component {
             { id: 5, value: 8, name: 'TV' }
         ]
     }
+    handleDel = (counter) => {
+       let a=this.state.counters.filter(c=>c!=counter)
+        this.setState({counters:a})
+    }
     render() {
         return (<div>
-            {this.state.counters.map(c =>  <Counter key={c.id} esm={c.name} meghdar={c.value}></Counter>            )}
+            {this.state.counters.map(c => <Counter
+                del={this.handleDel}
+                id={c.id}
+                key={c.id}
+                esm={c.name}
+                meghdar={c.value}
+                cntr={c}
+                ></Counter>)}
         </div>
         );
     }

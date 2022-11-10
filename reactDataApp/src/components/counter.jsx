@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+﻿import React, { Component } from 'react';
 
 class Counter extends Component {
     state = { 
@@ -20,8 +20,7 @@ class Counter extends Component {
                 <button onClick={this.handleDec} className='btn btn-warning'>Decrement</button>
                 <span className={myClass}>{this.countText()}</span>
                 <button onClick={this.handleInc} className='btn btn-success'>Increment</button>
-                <button className='btn btn-danger'>Delete</button>
-                {/* {this.state.names.map(o =><li key={o}> {o}</li>)} */}
+                <button className='btn btn-danger' onClick={()=>this.props.del(this.props.cntr)} >Delete</button>
             </div>
          );
     }
