@@ -15,10 +15,14 @@ class Counters extends Component {
        let a=this.state.counters.filter(c=>c!=counter)
         this.setState({counters:a})
     }
+    handleInc =(counter) =>{
+       
+    }
     render() {
         return (<div>
             {this.state.counters.map(c => <Counter
                 del={this.handleDel}
+                hinc={this.handleInc}
                 id={c.id}
                 key={c.id}
                 esm={c.name}

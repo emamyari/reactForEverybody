@@ -4,9 +4,7 @@ class Counter extends Component {
     state = { 
         count:0
     } 
-    handleInc =() =>{
-        this.state.count<10? this.setState({count: this.state.count+1}) : this.setState({count: this.state.count})
-    }
+  
     handleDec =() =>{
         this.state.count>0? this.setState({count: this.state.count-1}) : this.setState({count: this.state.count})
     }
@@ -19,7 +17,7 @@ class Counter extends Component {
             <div>
                 <button onClick={this.handleDec} className='btn btn-warning'>Decrement</button>
                 <span className={myClass}>{this.countText()}</span>
-                <button onClick={this.handleInc} className='btn btn-success'>Increment</button>
+                <button onClick={()=>this.props.hinc(this.props.cntr)} className='btn btn-success'>افزودن</button>
                 <button className='btn btn-danger' onClick={()=>this.props.del(this.props.cntr)} >Delete</button>
             </div>
          );
