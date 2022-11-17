@@ -16,7 +16,13 @@ class Counters extends Component {
         this.setState({counters:a})
     }
     handleInc =(counter) =>{
-       
+       let pos=this.state.counters.indexOf(counter)
+       let newCounters=this.state.counters.filter(c=>c!=counter)
+       counter.value++
+       newCounters=[...newCounters.slice(0,pos)
+                    ,counter
+                    ,...newCounters.slice(pos)]
+       this.setState({counter:newCounters})
     }
     render() {
         return (<div>
