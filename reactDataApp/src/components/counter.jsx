@@ -15,9 +15,9 @@ class Counter extends Component {
         console.log(this.props.esm)
         return (
             <div className='d-flex justify-content-center'>
-                <button onClick={this.handleDec} className='btn btn-warning'>Decrement</button>
+                <button onClick={()=>this.props.hDc(this.props.cntr)} className='btn btn-warning'>کاهش</button>
                 <span className={myClass}>{this.countText()}</span>
-                <button onClick={()=>this.props.hinc(this.props.cntr)} className='btn btn-success'>افزودن</button>
+                <button onClick={()=>this.props.hinc(this.props.cntr)} className='btn btn-success'>افزایش</button>
                 <button className='btn btn-danger' onClick={()=>this.props.del(this.props.cntr)} >Delete</button>
             </div>
          );

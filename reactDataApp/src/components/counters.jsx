@@ -24,11 +24,21 @@ class Counters extends Component {
                     ,...newCounters.slice(pos)]
        this.setState({counter:newCounters})
     }
+    handleDec =(counter) =>{
+        let pos=this.state.counters.indexOf(counter)
+        let newCounters=this.state.counters.filter(c=>c!=counter)
+        counter.value--
+        newCounters=[...newCounters.slice(0,pos)
+                     ,counter
+                     ,...newCounters.slice(pos)]
+        this.setState({counter:newCounters})
+     }
     render() {
         return (<div>
             {this.state.counters.map(c => <Counter
                 del={this.handleDel}
                 hinc={this.handleInc}
+                hDc={this.handleDec}
                 id={c.id}
                 key={c.id}
                 esm={c.name}
