@@ -18,7 +18,7 @@ class Counters extends Component {
     handleInc =(counter) =>{
        let pos=this.state.counters.indexOf(counter)
        let newCounters=this.state.counters.filter(c=>c!=counter)
-       counter.value++
+       counter.value<10?counter.value++:counter.value=counter.value
        newCounters=[...newCounters.slice(0,pos)
                     ,counter
                     ,...newCounters.slice(pos)]
