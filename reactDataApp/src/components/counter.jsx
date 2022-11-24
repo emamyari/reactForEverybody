@@ -14,7 +14,7 @@ class Counter extends Component {
         myClass=myClass+(this.props.meghdar>0?'warning':'primary');
         console.log(this.props.esm)
         return (
-            <div>
+            <div className='d-flex justify-content-center'>
                 <button onClick={this.handleDec} className='btn btn-warning'>Decrement</button>
                 <span className={myClass}>{this.countText()}</span>
                 <button onClick={()=>this.props.hinc(this.props.cntr)} className='btn btn-success'>افزودن</button>
