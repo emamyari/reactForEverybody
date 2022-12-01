@@ -38,7 +38,12 @@ class App extends Component {
     return (<div >
       <Menu></Menu>
 
-      <Counters></Counters>
+      <Counters 
+      handleDel={this.handleDel}
+      handleInc={this.handleInc}
+      handledec={this.handleDec}
+      appCounters={this.state.counters}
+      ></Counters>
     </div>);
   }
 }

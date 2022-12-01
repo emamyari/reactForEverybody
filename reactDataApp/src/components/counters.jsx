@@ -5,10 +5,10 @@ class  Counters extends Component {
    
     render() {
         return (<div className=' justify-content-center'>
-            {this.state.counters.map(c => <Counter
-                del={this.handleDel}
-                hinc={this.handleInc}
-                hDc={this.handleDec}
+            {this.props.appCounters.map(c => <Counter
+                del={this.props.handleDel}
+                hinc={this.props.handleInc}
+                hDc={this.props.handledec}
                 id={c.id}
                 key={c.id}
                 esm={c.name}
