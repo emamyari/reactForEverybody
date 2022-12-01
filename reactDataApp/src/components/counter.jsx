@@ -1,13 +1,6 @@
 ﻿import React, { Component } from 'react';
 
 class Counter extends Component {
-    state = { 
-        count:0
-    } 
-  
-    handleDec =() =>{
-        this.state.count>0? this.setState({count: this.state.count-1}) : this.setState({count: this.state.count})
-    }
     
     render() { 
         let myClass="badge m-2 badge-"
