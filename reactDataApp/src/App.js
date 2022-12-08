@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Counter from './components/counter'
 import Counters from './components/counters';
 import Menu from './components/menu';
+import Button from '@mui/material/Button';
 class App extends Component {
   state = {
     counters: [
@@ -36,14 +37,22 @@ class App extends Component {
   }
   render() {
     return (<div >
-      <Menu></Menu>
+      <Menu ></Menu>
 
-      <Counters 
-      handleDel={this.handleDel}
-      handleInc={this.handleInc}
-      handledec={this.handleDec}
-      appCounters={this.state.counters}
+      <Counters
+        handleDel={this.handleDel}
+        handleInc={this.handleInc}
+        handledec={this.handleDec}
+        appCounters={this.state.counters}
       ></Counters>
+      <div>
+        <p>
+          <Button variant="contained" color="primary">
+            Click
+          </Button>
+        </p>
+      </div>
+
     </div>);
   }
 }
