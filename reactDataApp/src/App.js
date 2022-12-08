@@ -37,7 +37,7 @@ class App extends Component {
   }
   render() {
     return (<div >
-      <Menu ></Menu>
+      <Menu tedad={this.state.counters.length} ></Menu>
 
       <Counters
         handleDel={this.handleDel}

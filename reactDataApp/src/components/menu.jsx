@@ -7,7 +7,7 @@ class Menu extends Component {
         
             <nav class="navbar navbar-dark bg-primary">
  
-                tedade kaala dar sabad:  
+                tedade kaala dar sabad: {this.props.tedad} 
            </nav>
         
             );
