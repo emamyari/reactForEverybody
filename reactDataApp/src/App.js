@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Counter from './components/counter'
 import Counters from './components/counters';
 import Menu from './components/menu';
-import Button from '@mui/material/Button';
+import { IconButton } from '@mui/material';
+
 class App extends Component {
   state = {
     counters: [
@@ -35,8 +36,11 @@ class App extends Component {
       , ...newCounters.slice(pos)]
     this.setState({ counter: newCounters })
   }
+  componentDidMount(){
+    console.log('mouuuuuuuuuuuuuuuuuuuuunt')
+  }
   render() {
-    return (<div >
+    return (<div className='bg-secondary' >
       <Menu tedad={this.state.counters.length} ></Menu>
 
       <Counters
@@ -47,9 +51,9 @@ class App extends Component {
       ></Counters>
       <div>
         <p>
-          <Button variant="contained" color="primary">
+          <IconButton variant="contained" color="primary">
             Click
-          </Button>
+          </IconButton>
         </p>
       </div>
 

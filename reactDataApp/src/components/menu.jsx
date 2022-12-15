@@ -5,8 +5,7 @@ class Menu extends Component {
     render() { 
         return (
         
-            <nav class="navbar navbar-dark bg-primary">
- 
+            <nav className="navbar navbar-dark bg-dark mb-2 text-light">
                 tedade kaala dar sabad: {this.props.tedad} 
            </nav>
         

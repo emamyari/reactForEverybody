@@ -4,7 +4,7 @@ import Counter from './counter';
 class  Counters extends Component {
    
     render() {
-        return (<div className=' justify-content-center'>
+        return (<div className=' justify-content-center '>
             {this.props.appCounters.map(c => <Counter
                 del={this.props.handleDel}
                 hinc={this.props.handleInc}
