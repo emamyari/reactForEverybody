@@ -6,13 +6,7 @@ import { IconButton } from '@mui/material';
 
 class App extends Component {
   state = {
-    counters: [
-      { id: 1, value: 2, name: 'iphone' },
-      { id: 2, value: 4, name: 'macBook' },
-      { id: 3, value: 9, name: 'phone cover' },
-      { id: 4, value: 1, name: 'book' },
-      { id: 5, value: 8, name: 'TV' }
-    ]
+    counters: []
   }
   handleDel = (counter) => {
     let a = this.state.counters.filter(c => c != counter)
@@ -37,7 +31,12 @@ class App extends Component {
     this.setState({ counter: newCounters })
   }
   componentDidMount(){
-    console.log('mouuuuuuuuuuuuuuuuuuuuunt')
+     this.fetchData()
+  }
+  fetchData = async () => {
+    const response = await fetch('http://127.0.0.1:8000/api/');
+    const data = await response.json();
+    this.setState({counters:data})
   }
   render() {
     return (<div className='bg-secondary' >
