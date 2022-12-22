@@ -34,30 +34,54 @@ class App extends Component {
      this.fetchData()
   }
   fetchData = async () => {
-    const response = await fetch('http://127.0.0.1:8000/api/');
+    const response = await fetch('http://parsianlotusfund.ir/Data/PureAsset');
     const data = await response.json();
     this.setState({counters:data})
   }
   render() {
-    return (<div className='bg-secondary' >
-      <Menu tedad={this.state.counters.length} ></Menu>
+    return (<div  >
+
+<table className="table">
+  <thead className="thead-dark">
+    <tr>
+      <th >NAV</th>
+      <th>JalaliDate</th>
+      <th >PurchaseNAVPerShare</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Larry</td>
+      <td>Larry</td>
+      <td>the Bird</td>
+    </tr>
+  </tbody>
+</table>
+
+    
+    </div>);
+  }
+}
+
+export default App;
+
+
+
+
+
+
+  {/* <Menu tedad={this.state.counters.length} ></Menu>
 
       <Counters
         handleDel={this.handleDel}
         handleInc={this.handleInc}
         handledec={this.handleDec}
         appCounters={this.state.counters}
-      ></Counters>
-      <div>
-        <p>
+      ></Counters> */}
+      {/* <div> */}
+        {/* <p>
           <IconButton variant="contained" color="primary">
             Click
           </IconButton>
-        </p>
-      </div>
-
-    </div>);
-  }
-}
-
-export default App;
+        </p> */}
+      {/* </div> */}
