@@ -31,13 +31,19 @@ class App extends Component {
     this.setState({ counter: newCounters })
   }
   componentDidMount(){
-     this.fetchData()
+    fetch("http://parsianlotusfund.ir/Data/PureAsset")
+    .then(res => res.json())
+    .then(
+      (counters) => {
+        this.setState({counters: counters })
+         console.log(this.state)
+      },
+      (error) => {
+      }
+    )
+
   }
-  fetchData = async () => {
-    const response = await fetch('http://parsianlotusfund.ir/Data/PureAsset');
-    const data = await response.json();
-    this.setState({counters:data})
-  }
+ 
   render() {
     return (<div  >
 
@@ -50,11 +56,11 @@ class App extends Component {
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Larry</td>
-      <td>Larry</td>
-      <td>the Bird</td>
-    </tr>
+    {this.state.counters.map(c=><tr>
+      <td>{c.NAV}</td>
+      <td>{c.JalaliDate}</td>
+      <td>{c.PurchaseNAVPerShare}</td>
+    </tr>)}
   </tbody>
 </table>
 
