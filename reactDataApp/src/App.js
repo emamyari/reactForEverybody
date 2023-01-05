@@ -10,7 +10,10 @@ class App extends Component {
   state = {
     counters: []
     ,
-    options : {
+    options: {
+      xAxis: {
+        categories: []
+      },
       series: [
         {
           data: []
@@ -19,7 +22,7 @@ class App extends Component {
     }
   }
 
- 
+
 
   handleDel = (counter) => {
     let a = this.state.counters.filter(c => c != counter)
@@ -49,16 +52,19 @@ class App extends Component {
       .then(
         (counters) => {
           this.setState({ counters: counters })
-          let li=[]
+          let li = []
+          let liDate = []
           counters.forEach(element => {
-            console.log('-------')
-            console.log(element.NAV)
-            if(element.JalaliDate>"1400/10/06")
+            if (element.JalaliDate > "1400/10/06") {
               li.push(element.NAV)
+              liDate.push(element.JalaliDate)
+            }
           });
 
-          let op ={series: [{data: li}],chart:{type:'area'}}
-          this.setState({options:op})
+          let op = { series: [{ data: li }],
+                     xAxis: {categories: liDate},
+                     chart: { type: 'area' } }
+          this.setState({ options: op })
         },
         (error) => {
         }
