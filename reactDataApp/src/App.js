@@ -44,7 +44,7 @@ class App extends Component {
     this.setState({ counter: newCounters })
   }
   componentDidMount() {
-    fetch("http://parsianlotusfund.ir/Data/PureAsset")
+    fetch("http://parsianzarinfund.com/Data/PureAsset")
       .then(res => res.json())
       .then(
         (counters) => {
