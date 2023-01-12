@@ -55,7 +55,7 @@ class App extends Component {
           let li = []
           let liDate = []
           counters.forEach(element => {
-            if (element.JalaliDate > "1400/10/06") {
+            if (element.JalaliDate > "1400/10/13") {
               li.push(element.NAV)
               liDate.push(element.JalaliDate)
             }
